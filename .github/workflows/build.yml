@@ -31,35 +31,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-
-          - os: ubuntu-20.04
-            qt_ver: 5
-
-          - os: ubuntu-20.04
-            qt_ver: 6
-            qt_host: linux
-            qt_arch: ''
-            qt_version: '6.2.4'
-            qt_modules: 'qt5compat qtimageformats'
-            qt_tools: ''
-
-          - os: windows-2022
-            name: "Windows-MinGW-w64"
-            msystem: clang64
-            vcvars_arch: 'amd64_x86'
-
-          - os: windows-2022
-            name: "Windows-MSVC-Legacy"
-            msystem: ''
-            architecture: 'win32'
-            vcvars_arch: 'amd64_x86'
-            qt_ver: 5
-            qt_host: windows
-            qt_arch: 'win32_msvc2019'
-            qt_version: '5.15.2'
-            qt_modules: ''
-            qt_tools: 'tools_openssl_x86'
-
           - os: windows-2022
             name: "Windows-MSVC"
             msystem: ''
@@ -70,37 +41,6 @@ jobs:
             qt_arch: ''
             qt_version: '6.5.1'
             qt_modules: 'qt5compat qtimageformats'
-            qt_tools: ''
-
-          - os: windows-2022
-            name: "Windows-MSVC-arm64"
-            msystem: ''
-            architecture: 'arm64'
-            vcvars_arch: 'amd64_arm64'
-            qt_ver: 6
-            qt_host: windows
-            qt_arch: 'win64_msvc2019_arm64'
-            qt_version: '6.5.1'
-            qt_modules: 'qt5compat qtimageformats'
-            qt_tools: ''
-
-          - os: macos-12
-            name: macOS
-            macosx_deployment_target: 11.0
-            qt_ver: 6
-            qt_host: mac
-            qt_arch: ''
-            qt_version: '6.5.0'
-            qt_modules: 'qt5compat qtimageformats'
-            qt_tools: ''
-
-          - os: macos-12
-            name: macOS-Legacy
-            macosx_deployment_target: 10.13
-            qt_ver: 5
-            qt_host: mac
-            qt_version: '5.15.2'
-            qt_modules: ''
             qt_tools: ''
 
     runs-on: ${{ matrix.os }}
